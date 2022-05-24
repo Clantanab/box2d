@@ -11,8 +11,8 @@ namespace practica1
 		this->cuerpo = new Box2d(world, b2_dynamicBody, x, y, width, height);
 
 		this->dir = 0;
-		this->rueda1 = new Circle2D(world, b2_dynamicBody, heightR1, separationR1, r1Radius);
-		this->rueda2 = new Circle2D(world, b2_dynamicBody, heightR2, separationR2, r2Radius);
+		this->rueda1 = new Circle2D(world, b2_dynamicBody, x + heightR1, y + (width/2) + separationR1, r1Radius);
+		this->rueda2 = new Circle2D(world, b2_dynamicBody, x + heightR2, y- (width/2) -  separationR2, r2Radius);
 
 		this->speed = speed;
 
