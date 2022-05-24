@@ -12,9 +12,9 @@ namespace practica1
 	{
 	private:
 
-		b2Body* body;
 		b2CircleShape* shape;
 	public:
+		b2Body* body;
 		bool active = true;
 		void Update() override {};
 		void Render(sf::RenderWindow& renderer, float window_height, float scale) override;

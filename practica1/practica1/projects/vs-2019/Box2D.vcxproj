@@ -87,14 +87,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\2dBox.hpp" />
+    <ClInclude Include="..\..\code\headers\car2D.hpp" />
     <ClInclude Include="..\..\code\headers\circle2d.hpp" />
+    <ClInclude Include="..\..\code\headers\edge.hpp" />
     <ClInclude Include="..\..\code\headers\object.hpp" />
     <ClInclude Include="..\..\code\headers\scene.hpp" />
     <ClInclude Include="..\..\code\headers\utils.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\2dBox.cpp" />
+    <ClCompile Include="..\..\code\sources\car2D.cpp" />
     <ClCompile Include="..\..\code\sources\circle2d.cpp" />
+    <ClCompile Include="..\..\code\sources\edge.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
     <ClCompile Include="..\..\code\sources\scene.cpp" />
   </ItemGroup>

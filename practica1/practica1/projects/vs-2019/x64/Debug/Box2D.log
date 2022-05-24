@@ -1,2 +1,13 @@
-﻿  circle2d.cpp
-  Box2D.vcxproj -> C:\Users\clant\OneDrive\Desktop\angel\practica1Animacion3DA\practica1\practica1\projects\vs-2019\x64\Debug\Box2D.exe
+﻿  2dBox.cpp
+  car2D.cpp
+  circle2d.cpp
+  edge.cpp
+  main.cpp
+  scene.cpp
+C:\Users\Alumno\Desktop\box2d\practica1\practica1\code\sources\scene.cpp(60,45): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+  Generando código...
+  Box2D.vcxproj -> C:\Users\Alumno\Desktop\box2d\practica1\practica1\projects\vs-2019\x64\Debug\Box2D.exe
