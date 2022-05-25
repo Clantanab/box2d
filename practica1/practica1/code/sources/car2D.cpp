@@ -21,8 +21,7 @@ namespace practica1
 		//creacion de las joint
 		b2DistanceJointDef* joint1 = new b2DistanceJointDef();
 		joint1->Initialize(cuerpo->body, rueda1->body, cuerpo->body->GetPosition(), rueda1->body->GetPosition());
-		joint1->bodyA = cuerpo->body;
-		joint1->bodyB = rueda1->body;
+
 		joint1->length = separationR1/1.5f;
 		joint1->stiffness = 15.0f;
 
@@ -33,8 +32,7 @@ namespace practica1
 
 		b2DistanceJointDef* joint2 = new b2DistanceJointDef();
 		joint2->Initialize(cuerpo->body, rueda2->body, cuerpo->body->GetPosition(), rueda2->body->GetPosition());
-		joint2->bodyA = cuerpo->body;
-		joint2->bodyB = rueda2->body;
+
 		joint2->length = separationR2/1.5f;
 		joint2->stiffness = 15.0f;
 		joint2->damping = 150.f;
