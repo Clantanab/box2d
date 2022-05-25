@@ -23,7 +23,7 @@ namespace practica1
 		joint1->Initialize(rueda1->body, cuerpo->body, rueda1->body->GetPosition(), cuerpo->body->GetPosition());
 		joint1->bodyA = rueda1->body;
 		joint1->bodyB = cuerpo->body;
-		joint1->length = separationR1/2;
+		joint1->length = separationR1/10;
 		joint1->stiffness = 7.0f;
 
 		joint1->damping = 80.f;
