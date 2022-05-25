@@ -56,7 +56,7 @@ int main ()
     Edge2D e3(*s.physicsWorld, b2_staticBody, right, bottom, right, top);
 
 
-    Car2D car(0.3f, 0.3f, -0.5f, -0.5f, 0.2f, 0.2f, 4, 1, 1, 0.2f, 2, *s.physicsWorld);
+    Car2D car(0.3f, 0.3f, -0.5f, -0.5f, 0.1f, 0.1f, 4, 1, 1, 0.2f, 2, *s.physicsWorld);
 
     s.AddObject(circle);
     s.AddObject(&car);
