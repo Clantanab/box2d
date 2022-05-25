@@ -20,7 +20,7 @@
 #include <2dBox.hpp>
 #include <car2D.hpp>
 #include <scene.hpp>
-
+#include <Sensor.hpp>
 
 
 
@@ -61,7 +61,9 @@ int main ()
     Edge2D e8(*s.physicsWorld, b2_staticBody, 4.5f, 2.25f, 5.5f, 2.25f);
     Edge2D e9(*s.physicsWorld, b2_staticBody, 7.5f, 1.25f, 10.f, 1.25f);
 
-    Car2D car(0.25f, 0.25f, -0.25f, -0.25f, 0.02f, 0.02f, 1.0f, 4.5f, 0.5f, 0.1f, -6, *s.physicsWorld);
+    
+
+    Car2D car(0.25f, 0.25f, -0.25f, -0.25f, 0.02f, 0.02f, 1.0f, 4.5f, 0.5f, 0.1f, -5, *s.physicsWorld);
 
     //s.AddObject(circle);
     s.AddObject(&car);

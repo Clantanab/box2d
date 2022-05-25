@@ -13,7 +13,7 @@ namespace practica1
 	{
 	protected:
 		b2EdgeShape* shape;
-		b2Body* body;
+
 	public:
 		bool active = true;
 

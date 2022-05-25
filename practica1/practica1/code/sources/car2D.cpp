@@ -9,7 +9,7 @@ namespace practica1
 	{
 		//creacion de las otras partes del coche 
 		this->cuerpo = new Box2d(world, b2_dynamicBody, x, y, width, height);
-
+		body = cuerpo->body;
 		this->dir = 0;
 
 		this->rueda1 = new Circle2D(world, b2_dynamicBody, x + (width ) + separationR1, y + heightR1, r1Radius);

@@ -2,7 +2,7 @@
 
 
 #include <SFML/Graphics.hpp>
-
+#include <Box2D/Box2D.h>
 
 
 namespace practica1
@@ -13,7 +13,10 @@ namespace practica1
 
 
 	public:
-		
+
+
+
+		b2Body* body;
 
 		virtual void Render(sf::RenderWindow& renderer, float window_height, float scale) {};
 		virtual void Update() {};

@@ -18,7 +18,7 @@ namespace practica1
 
 
 	public:
-		b2Body* body;
+
 		bool active = true;;
 
 		Box2d(b2World& world, b2BodyType bodytype, float x, float y, float width, float height);
