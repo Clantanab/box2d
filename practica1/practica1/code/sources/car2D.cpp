@@ -20,12 +20,15 @@ namespace practica1
 
 		//creacion de las joint
 		b2DistanceJointDef* joint1 = new b2DistanceJointDef();
-
+		joint1->Initialize(rueda1->body, cuerpo->body, rueda1->body->GetPosition(), cuerpo->body->GetPosition());
 		joint1->bodyA = rueda1->body;
 		joint1->bodyB = cuerpo->body;
 		joint1->length = separationR1/2;
-		joint1->stiffness = 3.0f;
-		joint1->damping = 0.1f;
+		joint1->stiffness = 7.0f;
+
+		joint1->damping = 80.f;
+		joint1->collideConnected = true;
+
 	    world.CreateJoint(joint1);
 
 		/*b2DistanceJointDef* joint2 = new b2DistanceJointDef();
