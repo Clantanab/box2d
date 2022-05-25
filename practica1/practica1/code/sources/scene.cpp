@@ -54,6 +54,7 @@ namespace practica1
 
 		//render y updates
 		physicsWorld->Step(time, 8, 4);
+		
 		for (auto& object : objects)
 		{
 			object->Update();
