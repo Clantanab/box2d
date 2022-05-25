@@ -23,10 +23,10 @@ namespace practica1
 		joint1->Initialize(cuerpo->body, rueda1->body, cuerpo->body->GetPosition(), rueda1->body->GetPosition());
 		joint1->bodyA = cuerpo->body;
 		joint1->bodyB = rueda1->body;
-		joint1->length = separationR1;
-		joint1->stiffness = 7.0f;
+		joint1->length = separationR1/1.5f;
+		joint1->stiffness = 15.0f;
 
-		joint1->damping = 80.f;
+		joint1->damping = 150.f;
 		joint1->collideConnected = true;
 
 	    world.CreateJoint(joint1);
@@ -35,9 +35,9 @@ namespace practica1
 		joint2->Initialize(cuerpo->body, rueda2->body, cuerpo->body->GetPosition(), rueda2->body->GetPosition());
 		joint2->bodyA = cuerpo->body;
 		joint2->bodyB = rueda2->body;
-		joint2->length = separationR2;
-		joint2->stiffness = 7.0f;
-		joint2->damping = 80.f;
+		joint2->length = separationR2/1.5f;
+		joint2->stiffness = 15.0f;
+		joint2->damping = 150.f;
 		joint2->collideConnected = true;
 		world.CreateJoint(joint2);
 
@@ -53,7 +53,7 @@ namespace practica1
 
 	void Car2D::Update()
 	{
-		if (rueda1->body-> GetAngularVelocity() < +10.f) rueda1->body->ApplyTorque(5.0f * 2.f, true);
+		if (rueda1->body-> GetAngularVelocity() < +10.f) rueda1->body->ApplyTorque(speed * 2.f, true);
 
 	}
 }
