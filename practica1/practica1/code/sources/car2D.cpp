@@ -11,18 +11,18 @@ namespace practica1
 		this->cuerpo = new Box2d(world, b2_dynamicBody, x, y, width, height);
 
 		this->dir = 0;
-		std::cout << y + (width / 2) + separationR1 << std::endl;
-		this->rueda1 = new Circle2D(world, b2_dynamicBody, y + (width / 2) + separationR1, x + heightR1, r1Radius);
-		//this->rueda2 = new Circle2D(world, b2_dynamicBody, x + heightR2, y- (width/2) -  separationR2, r2Radius);
+
+		this->rueda1 = new Circle2D(world, b2_dynamicBody, x + (width ) + separationR1, y + heightR1, r1Radius);
+		this->rueda2 = new Circle2D(world, b2_dynamicBody, x - separationR2 - (width), y + heightR2, r2Radius);
 
 		this->speed = speed;
 		
 
 		//creacion de las joint
 		b2DistanceJointDef* joint1 = new b2DistanceJointDef();
-		joint1->Initialize(rueda1->body, cuerpo->body, rueda1->body->GetPosition(), cuerpo->body->GetPosition());
-		joint1->bodyA = rueda1->body;
-		joint1->bodyB = cuerpo->body;
+		joint1->Initialize(cuerpo->body, rueda1->body, cuerpo->body->GetPosition(), rueda1->body->GetPosition());
+		joint1->bodyA = cuerpo->body;
+		joint1->bodyB = rueda1->body;
 		joint1->length = separationR1/10;
 		joint1->stiffness = 7.0f;
 
@@ -31,14 +31,15 @@ namespace practica1
 
 	    world.CreateJoint(joint1);
 
-		/*b2DistanceJointDef* joint2 = new b2DistanceJointDef();
-
+		b2DistanceJointDef* joint2 = new b2DistanceJointDef();
+		joint2->Initialize(cuerpo->body, rueda2->body, cuerpo->body->GetPosition(), rueda2->body->GetPosition());
 		joint2->bodyA = cuerpo->body;
 		joint2->bodyB = rueda2->body;
-		joint2->length = separationR2;
-		joint2->stiffness = 3.0f;
-		joint2->damping = 0.1f;
-		world.CreateJoint(joint2);*/
+		joint2->length = separationR2/10;
+		joint2->stiffness = 7.0f;
+		joint2->damping = 80.f;
+		joint2->collideConnected = true;
+		world.CreateJoint(joint2);
 
 	}
 
@@ -47,7 +48,7 @@ namespace practica1
 	{
 		this->cuerpo->Render(renderer, window_height, scale);
 		this->rueda1->Render(renderer, window_height, scale);
-		//this->rueda2->Render(renderer, window_height, scale);
+		this->rueda2->Render(renderer, window_height, scale);
 	}
 
 	void Car2D::Update()
