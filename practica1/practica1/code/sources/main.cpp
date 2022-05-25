@@ -16,8 +16,9 @@
 #include <Box2D/Box2D.h>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-//#include <edge.hpp>
+#include <edge.hpp>
 #include <2dBox.hpp>
+#include <car2D.hpp>
 #include <scene.hpp>
 
 
@@ -47,18 +48,22 @@ int main ()
 
     Scene s("prueba", &window);
     auto* box = new Box2d(*s.physicsWorld, b2_kinematicBody, 4, 3, 1, 0.2f);
+    auto* circle = new Circle2D(*s.physicsWorld, b2_dynamicBody, 1, 1, 0.5f);
 
-    /*Edge2D e(*s.physicsWorld, b2_staticBody, left, bottom, right, bottom);
+    Edge2D e(*s.physicsWorld, b2_staticBody, left, bottom, right, bottom);
     Edge2D e1(*s.physicsWorld, b2_staticBody, left, bottom, left, top);
     Edge2D e2(*s.physicsWorld, b2_staticBody, left, bottom, left, top);
     Edge2D e3(*s.physicsWorld, b2_staticBody, right, bottom, right, top);
 
 
-    s.AddObject(box);
+    Car2D car(0.5f, 0.5f, -0.5f, -0.5f, 0.01f, 0.01f, 4, 1, 1, 0.2f, 2, *s.physicsWorld);
+
+    s.AddObject(circle);
+    s.AddObject(&car);
     s.AddObject(&e);
     s.AddObject(&e1);
     s.AddObject(&e2);
-    s.AddObject(&e3);*/
+    s.AddObject(&e3);
 
     s.Init(60);
 
