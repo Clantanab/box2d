@@ -27,6 +27,7 @@ namespace practica1
 
 		joint1->damping = 150.f;
 		joint1->collideConnected = true;
+		
 
 	    world.CreateJoint(joint1);
 
