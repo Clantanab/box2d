@@ -63,7 +63,7 @@ int main ()
 
     
 
-    Car2D car(0.25f, 0.25f, -0.25f, -0.25f, 0.02f, 0.02f, 1.0f, 4.5f, 0.5f, 0.1f, -5, *s.physicsWorld);
+    Car2D car(0.15f, 0.15f, -0.35f, -0.35f, 0.02f, 0.02f, 1.0f, 5.5f, 0.5f, 0.1f, -6, *s.physicsWorld);
 
     //s.AddObject(circle);
     s.AddObject(&car);

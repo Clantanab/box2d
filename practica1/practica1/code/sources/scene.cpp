@@ -14,7 +14,7 @@ namespace practica1
 		//SceneManager::Instance().AddScene(this);
 
 
-		physicsWorld.reset(new b2World(b2Vec2{ 0, -10.f }));
+		physicsWorld.reset(new b2World(b2Vec2{ 0, -7.f }));
 		this->window = window;
 
 	}

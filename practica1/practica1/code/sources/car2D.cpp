@@ -19,24 +19,34 @@ namespace practica1
 		
 
 		//creacion de las joint
-		b2DistanceJointDef* joint1 = new b2DistanceJointDef();
-		joint1->Initialize(cuerpo->body, rueda1->body, cuerpo->body->GetPosition(), rueda1->body->GetPosition());
+		b2Vec2 axis(0.f, 1.0f);
+		b2WheelJointDef* joint1 = new b2WheelJointDef();
+		joint1->Initialize(cuerpo->body, rueda1->body,  rueda1->body->GetPosition(), axis);
 
-		joint1->length = separationR1/1.5f;
-		joint1->stiffness = 15.0f;
+		//EL MOTOR ESTA APAGADO AL EMPEZAAR
+		joint1->enableMotor = false;
+		joint1->maxMotorTorque = 100.f;
+		joint1->motorSpeed = -50.0f;
+		joint1->lowerTranslation = heightR1;
+		joint1->stiffness = 7.0f;
+		joint1->enableLimit = false;
 
-		joint1->damping = 150.f;
+		joint1->damping = 80.0f;
 		joint1->collideConnected = true;
 		
 
-	    world.CreateJoint(joint1);
+		joint = dynamic_cast<b2WheelJoint*>  (world.CreateJoint(joint1));
 
-		b2DistanceJointDef* joint2 = new b2DistanceJointDef();
-		joint2->Initialize(cuerpo->body, rueda2->body, cuerpo->body->GetPosition(), rueda2->body->GetPosition());
 
-		joint2->length = separationR2/1.5f;
-		joint2->stiffness = 15.0f;
-		joint2->damping = 150.f;
+		b2WheelJointDef* joint2 = new b2WheelJointDef();
+		joint2->Initialize(cuerpo->body, rueda2->body,  rueda2->body->GetPosition(), axis);
+
+		joint2->enableMotor = false;
+		joint2->motorSpeed = 0.0f;
+		joint2->enableLimit = false;
+
+		joint2->stiffness = 7.0f;
+		joint2->damping = 80.f;
 		joint2->collideConnected = true;
 		world.CreateJoint(joint2);
 
@@ -52,7 +62,7 @@ namespace practica1
 
 	void Car2D::Update()
 	{
-		if (rueda1->body-> GetAngularVelocity() < +10.f) rueda1->body->ApplyTorque(speed * 2.f, true);
+		//if (rueda1->body-> GetAngularVelocity() < +10.f) rueda1->body->ApplyTorque(speed * 2.f, true);
 
 	}
 }
