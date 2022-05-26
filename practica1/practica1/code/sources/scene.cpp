@@ -62,9 +62,29 @@ namespace practica1
 		}
 
 		window->display();
+
+
+		sf::Event a;
+		while (window->pollEvent(a))
+		{
+			for (auto& recierver : recievers)
+			{
+				recierver->RecieveInput(a);
+			}
+		}
 	}
+
+
+
+
+
 	void Scene::AddObject(Object* object)
 	{
 		objects.push_back(object);
+	}
+
+	void Scene::AddReceiver(InputReciever* reciever)
+	{
+		recievers.push_back(reciever);
 	}
 }

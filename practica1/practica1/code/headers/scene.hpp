@@ -12,7 +12,7 @@
 //#include <InputSystem.hpp>
 //#include <kernel.hpp>
 //#include <sceneManager.hpp>
-
+#include <inputReciever.hpp>
 
 namespace practica1 
 {
@@ -27,6 +27,7 @@ namespace practica1
 	private:
 		std::string id;
 		std::vector<Object*> objects;
+		std::vector<InputReciever*> recievers;
 		sf::RenderWindow* window;
 
 
@@ -46,6 +47,7 @@ namespace practica1
 		std::string GetName() {	return id;}
 
 		void AddObject(Object* object);
+		void AddReceiver(InputReciever* reciever);
 		
 
 

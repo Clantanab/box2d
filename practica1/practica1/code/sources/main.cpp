@@ -66,12 +66,12 @@ int main ()
     //Edge2D e10(*s.physicsWorld, b2_staticBody, 5.75f, 0.75f, 7.25f, 0.75f);
 
 
-    Copa c(7,6,1, *s.physicsWorld);
+    Copa c(7.5f,6,1, *s.physicsWorld);
  
 
     Car2D car(0.15f, 0.15f, -0.35f, -0.35f, 0.02f, 0.02f, 1.0f, 5.5f, 0.5f, 0.1f, -6, *s.physicsWorld);
 
-    PlataformaElevadora pla(*s.physicsWorld, 6.5f, 0.75f, 1.f, 0.1f, 1, 4.f);
+    PlataformaElevadora pla(*s.physicsWorld, 6.5f, 0.75f, 1.f, 0.1f, 1, 6.f);
 
     Sensor sas(e9.body, &car, 1.f, {7.50f, 1.25f});
     Sensor ses(e9.body, &car, 1.f, {6.5f, 0.75f});
@@ -80,6 +80,8 @@ int main ()
     sas.AddActiver(&c);
     sas.AddActiver(&pla);
     //s.AddObject(circle);
+
+    s.AddReceiver(&car);
 
     s.AddObject(&car);
     s.AddObject(&e);

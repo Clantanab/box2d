@@ -3,10 +3,11 @@
 #include <object.hpp>
 #include <circle2d.hpp>
 #include <2dBox.hpp>
+#include <inputReciever.hpp>
 
 namespace practica1
 {
-	class Car2D : public Object
+	class Car2D : public Object, public InputReciever
 	{
 	protected:
 		Box2d* cuerpo;
@@ -26,6 +27,7 @@ namespace practica1
 
 		void Update() override;
 		void Render(sf::RenderWindow& renderer, float window_height, float scale) override;
+		void RecieveInput(sf::Event event) override;
 
 	};
 }

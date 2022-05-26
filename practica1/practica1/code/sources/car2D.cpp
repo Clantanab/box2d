@@ -26,7 +26,7 @@ namespace practica1
 		//EL MOTOR ESTA APAGADO AL EMPEZAAR
 		joint1->enableMotor = true;
 		joint1->maxMotorTorque = 100.f;
-		joint1->motorSpeed = -50.0f;
+		joint1->motorSpeed = 0.0f;
 		joint1->lowerTranslation = heightR1;
 		joint1->stiffness = 7.0f;
 		joint1->enableLimit = false;
@@ -64,5 +64,39 @@ namespace practica1
 	{
 		//if (rueda1->body-> GetAngularVelocity() < +10.f) rueda1->body->ApplyTorque(speed * 2.f, true);
 
+	}
+
+	void Car2D::RecieveInput(sf::Event event)
+	{
+		switch (event.type)
+		{
+			case sf::Event::KeyPressed:
+
+				switch (event.key.code)
+				{
+					case sf::Keyboard::Left:
+						joint->SetMotorSpeed(50.0f);
+						break;
+					case sf::Keyboard::Right:
+						joint->SetMotorSpeed(-50.0f);
+						break;
+				}
+				break;
+
+			case sf::Event::KeyReleased:
+
+				switch (event.key.code)
+				{
+					case sf::Keyboard::Left:
+						joint->SetMotorSpeed(0.0f);
+						break;
+					case sf::Keyboard::Right:
+						joint->SetMotorSpeed(0.0f);
+						break;
+				}
+
+				break;
+
+		}
 	}
 }
