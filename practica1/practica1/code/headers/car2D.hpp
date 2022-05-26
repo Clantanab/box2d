@@ -20,7 +20,7 @@ namespace practica1
 		int dir;
 
 	public:
-		bool active = true;
+
 
 
 		Car2D(float r1Radius, float r2Radius, float heightR1, float heightR2, float separationR1, float separationR2, float x, float y, float width, float height, float speed, b2World& world);

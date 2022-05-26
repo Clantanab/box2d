@@ -13,12 +13,15 @@ namespace practica1
 		this->active = false;
 		this->speed = speed;
 		this->maxAltura = maxAltura;
+
+		
 	}
 
 	void PlataformaElevadora::Activate()
 	{
 		if (active == true) segundaActivacion = true;
 		this->active = true;
+		this->body->SetEnabled(true);
 
 	}
 
@@ -36,6 +39,10 @@ namespace practica1
 				segundaActivacion = false;
 			}
 
+		}
+		else if(!active)
+		{
+			this->body->SetEnabled(false);
 		}
 	}
 

@@ -6,7 +6,7 @@
 
 namespace practica1
 {
-	Sensor::Sensor(b2Body* body, Object* target, float distanceToActivate, b2Vec2 vec)
+	Sensor::Sensor(Object* body, Object* target, float distanceToActivate, b2Vec2 vec)
 	{
 		this->body = body;
 		this->target = target;
@@ -22,7 +22,7 @@ namespace practica1
 
 	void Sensor::Update()
 	{
-		if (usado) return;
+		if (usado || body->active == false) return;
 		
 		b2Vec2 aux = target->body->GetPosition() - vec;
 		

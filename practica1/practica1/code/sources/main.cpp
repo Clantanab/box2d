@@ -64,17 +64,32 @@ int main ()
     Edge2D e8(*s.physicsWorld, b2_staticBody, 4.5f, 2.25f, 5.5f, 2.25f);
     Edge2D e9(*s.physicsWorld, b2_staticBody, 7.5f, 1.25f, 10.f, 1.25f);
     //Edge2D e10(*s.physicsWorld, b2_staticBody, 5.75f, 0.75f, 7.25f, 0.75f);
+    Edge2D e11(*s.physicsWorld, b2_staticBody, 5.50f, 6.75f, 4.25f, 6.75f);
+    Edge2D e12(*s.physicsWorld, b2_staticBody, 4.25f, 6.75f, 3.75f, 6.0f);
+    Edge2D e13(*s.physicsWorld, b2_staticBody, 3.75f, 6.0f, 3.25f, 6.0f);
+    Edge2D e14(*s.physicsWorld, b2_staticBody, 3.25f, 6.0f, 2.75f, 6.75f);
+
 
 
     Copa c(7.5f,6,1, *s.physicsWorld);
  
 
+    Circle2D r1(*s.physicsWorld, b2_dynamicBody, 7.5,7,0.10f);
+    Circle2D r2(*s.physicsWorld, b2_dynamicBody, 7.5, 7.2, 0.10f);
+    Circle2D r3(*s.physicsWorld, b2_dynamicBody, 7.3, 7, 0.10f);
+    Circle2D r4(*s.physicsWorld, b2_dynamicBody, 7.7, 7, 0.10f);
+    Circle2D r5(*s.physicsWorld, b2_dynamicBody, 7.5, 7.5, 0.10f);
+    Circle2D r6(*s.physicsWorld, b2_dynamicBody, 7.7, 7.5, 0.10f);
+    Circle2D r7(*s.physicsWorld, b2_dynamicBody, 7.3, 7.5, 0.10f);
+
+
+
     Car2D car(0.15f, 0.15f, -0.35f, -0.35f, 0.02f, 0.02f, 1.0f, 5.5f, 0.5f, 0.1f, -6, *s.physicsWorld);
 
     PlataformaElevadora pla(*s.physicsWorld, 6.5f, 0.75f, 1.f, 0.1f, 1, 6.f);
 
-    Sensor sas(e9.body, &car, 1.f, {7.50f, 1.25f});
-    Sensor ses(e9.body, &car, 1.f, {6.5f, 0.75f});
+    Sensor sas(&e9, &car, 0.75f, {8.50f, 1.25f});
+    Sensor ses(&pla, &car, 0.75f, {6.5f, 0.75f});
 
     ses.AddActiver(&pla);
     sas.AddActiver(&c);
@@ -94,6 +109,17 @@ int main ()
     s.AddObject(&e7);
     s.AddObject(&e8);
     s.AddObject(&e9);
+    s.AddObject(&e11);
+    s.AddObject(&e12);
+    s.AddObject(&e13);
+    s.AddObject(&e14);
+    s.AddObject(&r1);
+    s.AddObject(&r2);
+    s.AddObject(&r3);
+    s.AddObject(&r4);
+    s.AddObject(&r5);
+    s.AddObject(&r6);
+    s.AddObject(&r7);
     s.AddObject(&c);
     s.AddObject(&pla);
     s.AddObject(&sas);

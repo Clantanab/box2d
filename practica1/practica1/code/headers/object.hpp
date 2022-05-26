@@ -13,7 +13,7 @@ namespace practica1
 
 
 	public:
-
+		bool active;
 
 
 		b2Body* body;

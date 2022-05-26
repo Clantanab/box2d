@@ -15,7 +15,7 @@ namespace practica1
 		b2EdgeShape* shape;
 
 	public:
-		bool active = true;
+
 
 		Edge2D(b2World& physics_world, b2BodyType body_type, float x0, float y0, float x1, float y1);
 

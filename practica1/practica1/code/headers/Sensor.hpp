@@ -21,9 +21,9 @@ namespace practica1
 		float minDistanceToActivate;
 
 	public:
-		b2Body* body;
+		Object* body;
 		
-		Sensor( b2Body* body, Object* target, float distanceToActivate, b2Vec2 vec);
+		Sensor(Object* body, Object* target, float distanceToActivate, b2Vec2 vec);
 		void Update() override;
 		void Render(sf::RenderWindow& renderer, float window_height, float scale) override {};
 		void AddActiver(Activer* activer);
