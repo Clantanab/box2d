@@ -22,6 +22,7 @@
 #include <scene.hpp>
 #include <Sensor.hpp>
 #include <copa.hpp>
+#include <copa.hpp>
 
 
 
@@ -61,12 +62,21 @@ int main ()
     Edge2D e7(*s.physicsWorld, b2_staticBody, 3.5f, 2.50f, 4.5f, 2.25f);
     Edge2D e8(*s.physicsWorld, b2_staticBody, 4.5f, 2.25f, 5.5f, 2.25f);
     Edge2D e9(*s.physicsWorld, b2_staticBody, 7.5f, 1.25f, 10.f, 1.25f);
+    Edge2D e10(*s.physicsWorld, b2_staticBody, 5.75f, 0.75f, 7.25f, 0.75f);
 
-    Copa c(5,5,1, *s.physicsWorld);
+
+    Copa c(7,6,1, *s.physicsWorld);
+ 
 
     Car2D car(0.15f, 0.15f, -0.35f, -0.35f, 0.02f, 0.02f, 1.0f, 5.5f, 0.5f, 0.1f, -6, *s.physicsWorld);
 
+
+    Sensor sas(e9.body, &car, 1.f, {7.50f, 1.25f});
+    //Sensor ses(e9.body, &car, 1.f, {});
+
+    sas.AddActiver(&c);
     //s.AddObject(circle);
+
     s.AddObject(&car);
     s.AddObject(&e);
     s.AddObject(&e1);
@@ -79,6 +89,8 @@ int main ()
     s.AddObject(&e8);
     s.AddObject(&e9);
     s.AddObject(&c);
+    s.AddObject(&sas);
+    s.AddObject(&e10);
     s.Init(60);
 
     return 0;

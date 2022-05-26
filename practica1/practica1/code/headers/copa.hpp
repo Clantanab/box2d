@@ -1,12 +1,12 @@
 #pragma once
 
 
-
+#include <activers.hpp>
 #include <2dBox.hpp>
 
 namespace practica1 
 {
-	class Copa : public Object
+	class Copa : public Object, public Activer
 	{
 
 
@@ -24,5 +24,6 @@ namespace practica1
 
 		void Update() override {};
 		void Render(sf::RenderWindow& renderer, float window_height, float scale) override;
+		void Activate() override;
 	};
 }

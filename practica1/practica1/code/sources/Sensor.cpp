@@ -2,14 +2,16 @@
 
 #include <Sensor.hpp>
 #include <Box2D/Box2D.h>
+#include <iostream>
 
 namespace practica1
 {
-	Sensor::Sensor(b2Body* body, Object* target, float distanceToActivate)
+	Sensor::Sensor(b2Body* body, Object* target, float distanceToActivate, b2Vec2 vec)
 	{
 		this->body = body;
 		this->target = target;
 		this->minDistanceToActivate = distanceToActivate;
+		this->vec = vec;
 	}
 
 	void Sensor::AddActiver(Activer* activer)
@@ -20,10 +22,15 @@ namespace practica1
 
 	void Sensor::Update()
 	{
-		b2Vec2 vec = target->body->GetPosition() - this->body->GetPosition();
+		
+		b2Vec2 aux = target->body->GetPosition() - vec;
+		
+	
 
-		if (vec.LengthSquared() < (minDistanceToActivate * minDistanceToActivate))
+
+		if (aux.LengthSquared() < (minDistanceToActivate * minDistanceToActivate))
 		{
+			
 			for (auto aciver : activers)
 			{
 				aciver->Activate();

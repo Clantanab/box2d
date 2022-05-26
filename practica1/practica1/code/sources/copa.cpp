@@ -24,8 +24,8 @@ namespace practica1
 
 		joint->Initialize(sujetador->body, box->body, box->body->GetPosition() + vec);
 		joint->enableMotor = true;
-		joint->maxMotorTorque = 10.f;
-		joint->motorSpeed = -1.0f;
+		joint->maxMotorTorque = 100.f;
+		joint->motorSpeed = .0f;
 		
 		joint->collideConnected = false;
 		joint1 = dynamic_cast<b2RevoluteJoint*>    (physics_world.CreateJoint(joint));
@@ -35,21 +35,13 @@ namespace practica1
 
 		a->Initialize(sujetador->body, box1->body, box1->body->GetPosition() + vec1);
 		a->enableMotor = true;
-		a->maxMotorTorque = 10.f;
-		a->motorSpeed = -1.0f;
+		a->maxMotorTorque = 100.f;
+		a->motorSpeed = .0f;
 		
 		a->collideConnected = false;
 		joint2 = dynamic_cast<b2RevoluteJoint*>    (physics_world.CreateJoint(a));
 
-       /* shape1 = new b2PolygonShape();
-        b2Vec2 vertices1[4];
-        vertices1[0] = { posX - 0.3f, posY + 0.3f };
-        vertices1[1] = { posX - 0.25f, posY + 0.35f };
-        vertices1[2] = { posX, posY + 0.05f };
-        vertices1[3] = { posX, posY - 0.05f };
-        shape1->Set(vertices1, vertices1->Length());
 
-        body->CreateFixture(shape1, 1);*/
 
 	
 	}
@@ -60,6 +52,10 @@ namespace practica1
 		sujetador->Render(renderer, window_height, scale);
 	}
 
-
+	void Copa::Activate()
+	{
+		joint1->SetMotorSpeed(-1.0f);
+		joint2->SetMotorSpeed(-1.0f) ;
+	}
 
 }

@@ -24,7 +24,7 @@ namespace practica1
 		joint1->Initialize(cuerpo->body, rueda1->body,  rueda1->body->GetPosition(), axis);
 
 		//EL MOTOR ESTA APAGADO AL EMPEZAAR
-		joint1->enableMotor = false;
+		joint1->enableMotor = true;
 		joint1->maxMotorTorque = 100.f;
 		joint1->motorSpeed = -50.0f;
 		joint1->lowerTranslation = heightR1;
