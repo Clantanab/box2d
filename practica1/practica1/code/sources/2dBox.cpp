@@ -19,7 +19,7 @@ namespace practica1
         shape->SetAsBox(width, height);
 
 
-
+       
 
         b2FixtureDef body_fixture ;
 
@@ -27,7 +27,8 @@ namespace practica1
         body_fixture.density = 1.00f;
         body_fixture.restitution = 0.50f;
         body_fixture.friction = 0.50f;
-
+        
+       
         body->CreateFixture(&body_fixture);
 	}
 
