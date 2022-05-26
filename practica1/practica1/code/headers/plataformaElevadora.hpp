@@ -14,6 +14,7 @@ namespace practica1
 		float speed;
 		float maxAltura;
 
+		bool segundaActivacion = false;
 
 
 	public:
@@ -21,6 +22,7 @@ namespace practica1
 		PlataformaElevadora(b2World& world, float x, float y, float width, float height, float speed, float maxAltura);
 		void Activate() override;
 		void Update() override ;
+
 
 
 	};

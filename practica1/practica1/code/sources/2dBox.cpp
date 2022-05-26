@@ -34,6 +34,7 @@ namespace practica1
 
     void Box2d::Render(sf::RenderWindow& renderer, float window_height, float scale)
     {
+        if (active == false) return;
         sf::ConvexShape sfml_polygon;
 
         sfml_polygon.setPointCount(shape->m_count);

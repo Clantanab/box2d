@@ -14,6 +14,8 @@ namespace practica1
 	protected:
 		std::vector<Activer*> activers;
 
+		bool usado = false;
+
 		Object* target;
 		b2Vec2 vec{ 0,0 };
 		float minDistanceToActivate;

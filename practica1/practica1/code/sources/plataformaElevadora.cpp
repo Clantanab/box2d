@@ -17,12 +17,14 @@ namespace practica1
 
 	void PlataformaElevadora::Activate()
 	{
+		if (active == true) segundaActivacion = true;
 		this->active = true;
+
 	}
 
 	void PlataformaElevadora::Update()
 	{
-		if (active == true)
+		if (segundaActivacion == true)
 		{
 			if (body->GetPosition().y < this->orginalYposition + maxAltura)
 			{
@@ -31,6 +33,7 @@ namespace practica1
 			else
 			{
 				this->body->SetLinearVelocity({ 0,0 });
+				segundaActivacion = false;
 			}
 
 		}

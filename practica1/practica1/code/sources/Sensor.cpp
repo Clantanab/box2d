@@ -22,11 +22,10 @@ namespace practica1
 
 	void Sensor::Update()
 	{
+		if (usado) return;
 		
 		b2Vec2 aux = target->body->GetPosition() - vec;
 		
-	
-
 
 		if (aux.LengthSquared() < (minDistanceToActivate * minDistanceToActivate))
 		{
@@ -34,7 +33,9 @@ namespace practica1
 			for (auto aciver : activers)
 			{
 				aciver->Activate();
+
 			}
+			usado = true;
 		}
 
 
