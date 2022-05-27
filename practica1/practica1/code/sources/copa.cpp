@@ -26,7 +26,8 @@ namespace practica1
 		joint->enableMotor = true;
 		joint->maxMotorTorque = 100.f;
 		joint->motorSpeed = .0f;
-		
+		joint->lowerAngle = -1.f;
+		joint->enableLimit = true;
 		joint->collideConnected = false;
 		joint1 = dynamic_cast<b2RevoluteJoint*>    (physics_world.CreateJoint(joint));
 
@@ -37,7 +38,8 @@ namespace practica1
 		a->enableMotor = true;
 		a->maxMotorTorque = 100.f;
 		a->motorSpeed = .0f;
-		
+		a->lowerAngle = -1.5f;
+		a->enableLimit = true;
 		a->collideConnected = false;
 		joint2 = dynamic_cast<b2RevoluteJoint*>    (physics_world.CreateJoint(a));
 

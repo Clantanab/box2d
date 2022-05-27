@@ -15,6 +15,12 @@ namespace practica1
 		Circle2D* rueda2;
 
 		b2WheelJoint* joint;
+		b2WheelJoint* joint22;
+		b2WheelJoint* cajaJoint;
+
+		Box2d* base;
+		Box2d* lado1;
+		Box2d* lado2;
 
 		float speed;
 		int dir;
