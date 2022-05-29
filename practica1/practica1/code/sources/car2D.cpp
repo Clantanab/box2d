@@ -88,15 +88,15 @@ namespace practica1
 		b2WheelJointDef* joint3 = new b2WheelJointDef();
 		joint3->Initialize(cuerpo->body, base->body, { x - width, y + height }, axis3);
 		joint3->enableMotor = true;
-		joint3->maxMotorTorque = 400.f;
+		joint3->maxMotorTorque = 100.f;
 		joint3->motorSpeed = 0.0f;
-		joint3->lowerTranslation = 1;
-		joint3->stiffness = 1.0f;
-		joint3->enableLimit = false;
+
+		joint3->stiffness = 7.0f;
+
 		joint3->collideConnected = true; 
 		joint3->damping = 1;
 		
-		world.CreateJoint(joint3);
+
 		cajaJoint = dynamic_cast<b2WheelJoint*>  (world.CreateJoint(joint3));
 
 
@@ -137,10 +137,10 @@ namespace practica1
 						break;
 
 					case sf::Keyboard::Space:
-						cajaJoint->SetMotorSpeed(10.0f);
+						cajaJoint->SetMotorSpeed(5.0f);
 						break;
 					case sf::Keyboard::C:
-						cajaJoint->SetMotorSpeed(-10.0f);
+						cajaJoint->SetMotorSpeed(-5.0f);
 						break;
 				}
 				break;

@@ -55,7 +55,7 @@ int main ()
 
     Edge2D e(*s.physicsWorld, b2_staticBody, left, bottom, right, bottom);
     Edge2D e1(*s.physicsWorld, b2_staticBody, left, bottom, left, top);
-    Edge2D e2(*s.physicsWorld, b2_staticBody, left, bottom, left, top);
+    
     Edge2D e3(*s.physicsWorld, b2_staticBody, right, bottom, right, top);
     Edge2D e4(*s.physicsWorld, b2_staticBody, left, 4.0f, 1.50f, 4.0f);
     Edge2D e5(*s.physicsWorld, b2_staticBody, 1.50f, 4.0f, 2.5f, 3.0f);
@@ -101,7 +101,7 @@ int main ()
     s.AddObject(&car);
     s.AddObject(&e);
     s.AddObject(&e1);
-    s.AddObject(&e2);
+   // s.AddObject(&e2);
     s.AddObject(&e3);
     s.AddObject(&e4);
     s.AddObject(&e5);
